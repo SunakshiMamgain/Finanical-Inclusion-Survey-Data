@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Finance Inclusion Detection in Africa</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+ <div class="login">
+ <h1>Finance Inclusion Detection in Africa</h1>
+<!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+	<TABLE>
+	<TR>
+	<TD>
+    	<input type="text" name="country" placeholder="country" required="required" />
+    </TD>
+	<TD>
+		<input type="text" name="year" placeholder="year" required="required" />
+	</TD>
+	<TD>
+	<input type="text" name="location_type" placeholder="location_type" required="required" />
+    </TD>
+	</TR>
+	<TR>
+	<TD>
+	<input type="text" name="cellphone_access" placeholder="cellphone_access" required="required" />
+    </TD>
+	<TD>
+    <input type="text" name="household_size" placeholder="household_size" required="required" />
+	</TD>
+	<TD>
+	<input type="text" name="age_of_respondent" placeholder="age_of_respondent" required="required" />
+</TD>
+</TR>
+<TR>
+	<TD>
+        <input type="text" name="gender_of_respondent" placeholder="gender_of_respondent" required="required" />
+</TD>
+	<TD>
+		<input type="text" name="relationship_with_head" placeholder="relationship_with_head" required="required" />
+
+</TD>
+	<TD>
+    	<input type="text" name="marital_status" placeholder="marital_status" required="required" />
+</TD>
+</TR>
+	<TD>
+        <input type="text" name="education_level" placeholder="education_level" required="required" />
+</TD>
+	<TD>
+		<input type="text" name="job_type" placeholder="job_type" required="required" />
+    </TD>
+	<TD>
+<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</TD>
+
+</TR>
+	 </TABLE>
+	 
+    
+	</form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+</div>
+
+
+</body>
+</html>
